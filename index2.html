@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+
+        <div id="root">
+            <ul>
+                <li v-for="name in names"> {{ name }} </li>
+            </ul>
+
+            <input type="text" id="input" v-model="newName">
+            <button type="text" id="button" @click="addName"> Add to list</button>
+        </div>
+
+
+        <script>
+
+            var app = new Vue({
+                el: '#root',
+                data : {
+                    newName: '',
+                    names: ['Sergio', 'Pedro', 'Carlos']
+                },
+                methods : {
+                    addName() {
+                        this.names.push(this.newName);
+                    }
+                }
+
+                // mounted() {
+                //     document.getElementById('button').addEventListener('click', () => {
+                //     let newName = document.getElementById('input');
+
+                //     app.names.push(newName.value);
+
+                //     newName.value = ''
+
+                //     });
+                // }
+            })
+
+            
+
+        </script>
+    </body>
+</html>

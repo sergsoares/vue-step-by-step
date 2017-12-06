@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+   
+        <div id="root">
+           <h1> {{ message.toUpperCase() }} </h1>
+
+            <p v-text="message.toUpperCase()"></p>
+
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+            <span v-text="messageUpperCase" ></span>
+        </div>
+        
+    <script>
+        const app = new Vue({
+           el: '#root',
+
+           data: {
+               message: 'Hello World'
+           },
+
+           computed: {
+               messageUpperCase() {
+                   return this.message.toLowerCase();
+               }
+           }
+
+        });
+    </script>
+    </body>
+</html>

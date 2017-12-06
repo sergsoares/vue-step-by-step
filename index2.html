@@ -15,8 +15,10 @@
                 <li v-for="name in names"> {{ name }} </li>
             </ul>
 
-            <input type="text" id="input" v-model="newName">
-            <button type="text" id="button" @click="addName"> Add to list</button>
+            <input type="text" id="input" v-model="newName" v-on:keyPressEnte="addName">
+
+            <p>  Preview: {{ newName}} </p>
+            <button type="text" id="button" v-on:click="addName"> Add to list</button>
         </div>
 
 
@@ -31,6 +33,7 @@
                 methods : {
                     addName() {
                         this.names.push(this.newName);
+                        this.newName = '';
                     }
                 }
 

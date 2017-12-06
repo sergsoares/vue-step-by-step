@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+
+        <div id="root">
+
+            <h1>All tasks</h1>
+            
+            <li v-for="task in tasks" v-text="task.description" ></li>
+
+            <h2>Incompleted Tasks</h2>
+            <li v-for="task in incompletedTasks" v-text="task.description" ></li>
+
+            <h2>Completed tasks</h2>
+            <li v-for="task in completedTasks" v-text="task.description" ></li>
+
+
+        </div>
+
+        <script>
+
+            const app = new Vue({
+                el: '#root',
+                data: {
+                    tasks: [
+                        { description: 'Study vue js' , completed: false },
+                        { description: 'PHP manual' , completed: true },
+                        { description: 'BDD Cucumber' , completed: true },
+                        { description: 'TDD book' , completed: false },
+                        { description: 'ES6 features' , completed: false },
+                        { description: 'Laravel From Scratch' , completed: true },
+                        { description: 'DDD practices' , completed: false }
+                    ]
+                },
+
+                computed: {
+                    incompletedTasks() {
+                        return this.tasks.filter( task => ! task.completed );
+                    },
+                    completedTasks() {
+                        return this.tasks.filter( task => task.completed );
+                    },
+                },
+
+                methods: {
+
+                }
+
+
+            });
+
+        </script>
+    </body>
+</html>
